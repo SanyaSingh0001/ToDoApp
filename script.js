@@ -1,6 +1,6 @@
 
 
-// 🔹 Select Input, Button, and Task List Elements  
+//  Select Input, Button, and Task List Elements  
 let inp = document.querySelector("#taskInput");
 let btn = document.querySelector("#addTaskBtn");
 let ul = document.querySelector("#taskList");
@@ -28,7 +28,7 @@ btn.addEventListener("click", function() {
     let checkbox = document.createElement("input");
     checkbox.type = "checkbox";
 
-    // 🔹 Create Delete Button
+    //  Create Delete Button
     let delBtn = document.createElement("button");
     delBtn.innerText = "Delete";
     delBtn.classList.add("Delete"); //  Add class for easy selection
@@ -42,7 +42,7 @@ btn.addEventListener("click", function() {
     saveTasks(); //  Save tasks in localStorage
 });
 
-// 🗑 Delete a Task When "Delete" Button is Clicked
+//  Delete a Task When "Delete" Button is Clicked
 ul.addEventListener("click", function(event) {
     if (event.target.classList.contains("Delete")) {
         event.target.parentElement.remove(); //  Remove the task from UI
@@ -72,7 +72,7 @@ document.querySelector(".filters").addEventListener("click", function(event) {
     }
 });
 
-// 🔹 Save Tasks to localStorage for Persistence
+//  Save Tasks to localStorage for Persistence
 function saveTasks() {
     let tasks = [];
     document.querySelectorAll("#taskList li").forEach(listItem => {
@@ -85,7 +85,7 @@ function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks)); //  Store tasks in localStorage
 }
 
-// 🛠 Load Stored Tasks from localStorage on Page Load
+//  Load Stored Tasks from localStorage on Page Load
 document.addEventListener("DOMContentLoaded", loadTasks);
 function loadTasks() {
     let storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -108,16 +108,16 @@ function loadTasks() {
     });
 }
 
-// 🔹 Apply Dark Mode Based on User Preference
+//  Apply Dark Mode Based on User Preference
 let toggleBtn = document.querySelector("#toggleMode");
 let body = document.body;
 
-// 🔹 Load saved dark mode preference on page load
+//  Load saved dark mode preference on page load
 if (localStorage.getItem("darkMode") === "enabled") {
     body.classList.add("dark-mode");
 }
 
-// 🔹 Toggle Dark Mode on Button Click
+//  Toggle Dark Mode on Button Click
 toggleBtn.addEventListener("click", function() {
     body.classList.toggle("dark-mode");
 
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// 🔹 Handle Task Positioning During Dragging
+//  Handle Task Positioning During Dragging
 ul.addEventListener("dragover", function(event) {
     event.preventDefault(); //  Allow dropping in new position
 
@@ -158,7 +158,7 @@ ul.addEventListener("dragover", function(event) {
     }
 });
 
-// 🔹 Helper Function to Determine Drop Position
+//  Helper Function to Determine Drop Position
 function getDragAfterElement(container, y) {
     const draggableElements = [...container.querySelectorAll("li:not(.dragging)")];
     return draggableElements.reduce((closest, child) => {
@@ -168,7 +168,7 @@ function getDragAfterElement(container, y) {
     }, { offset: Number.NEGATIVE_INFINITY }).element;
 }
 
-// 🔥 "Clear All Tasks" Button to Reset Task List
+//  "Clear All Tasks" Button to Reset Task List
 let clearBtn = document.querySelector("#clearTasks");
 clearBtn.addEventListener("click", function() {
     ul.innerHTML = ""; //  Clears all tasks from UI
