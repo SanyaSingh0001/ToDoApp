@@ -1,0 +1,154 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.input-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filters .filter {
+  margin: 0 5px;
+}
+
+.filters .active {
+  background-color: #007bff;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #e9ecef;
+  padding: 10px;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px; /*  Adds space between checkbox & task */
+}
+
+button.Delete {
+    margin-left: 10px; /*  Adds space between checkbox & delete button */
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%; /* Make container wider on smaller screens */
+        padding: 15px;
+    }
+
+    .input-section {
+        flex-direction: column; /* Stack input and button vertically */
+    }
+
+    button {
+        width: 100%; /* Make buttons full-width for easier tapping */
+        padding: 12px;
+    }
+
+    li {
+        flex-direction: column; /* Stack task items vertically */
+        align-items: flex-start;
+    }
+
+    input[type="checkbox"] {
+        margin-bottom: 5px; /* Give space between checkbox and text */
+    }
+}
+
+li {
+    transition: all 0.3s ease-in-out; /* Smooth appearance */
+}
+
+button:hover {
+    background-color: #0056b3;
+    transition: 0.2s;
+}
+
+#toggleMode{
+  /* margin:  20px auto ; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px 20px; /* Adds better click area */
+
+}
+.dark-mode {
+    background-color: #1e1e1e; /* Dark background */
+    color: white; /* Light text */
+}
+
+.dark-mode .container {
+    background-color: #2a2a2a; /* Darker container */
+}
+
+.dark-mode .filter.active {
+    background-color: #0056b3; /* Adjust button color for dark mode */
+}
+
+.dark-mode button {
+    background-color: #444; /* Dark buttons */
+    color: white;
+}
+
+.dark-mode li {
+    color: white; /* Ensures text is visible */
+    background-color: #333; /* Dark background for tasks */
+}
+
+body, .container, li {
+    transition: background-color 0.5s ease, color 0.3s ease;
+}  
+
+.NewBtns{
+  display: flex;
+   /* margin:  20px auto ; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 10px 20px; /* Adds better click area */
+
+}
